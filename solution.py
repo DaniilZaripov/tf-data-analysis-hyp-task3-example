@@ -8,6 +8,6 @@ def solution(x: np.array, y: np.array) -> bool:
     p_value = permutation_test((x, y), lambda x, y, axis: np.mean(x, axis=axis) - np.mean(y, axis=axis), 
                  vectorized=True, 
                  n_resamples=5000,
-                 alternative='greater').pvalue
+                 alternative='less').pvalue
     alpha = 0.1
     return p_value < alpha
